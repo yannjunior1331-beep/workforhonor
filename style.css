@@ -1,0 +1,2748 @@
+/* ==========================================================================
+   Base 1920x1080 Resolution Design System Calibration
+   All dimensions, gaps, fonts, and positions are calibrated for 1920x1080.
+   ========================================================================== */
+:root {
+  --base-width: 1920px;
+  --base-height: 1080px;
+}
+
+/* ==========================================================================
+   Typography & Font Declarations
+   Using local fonts provided in assets/fonts/
+   ========================================================================== */
+@font-face {
+  font-family: 'Aspekta';
+  src: url('./assets/fonts/AspektaVF.woff2') format('woff2'),
+    url('./assets/fonts/AspektaVF.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aspekta';
+  src: url('./assets/fonts/Aspekta-200/Aspekta-250.ttf') format('truetype');
+  font-weight: 250;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aspekta';
+  src: url('./assets/fonts/Aspekta-200/Aspekta-400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aspekta';
+  src: url('./assets/fonts/Aspekta-200/Aspekta-600.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aspekta';
+  src: url('./assets/fonts/Aspekta-200/Aspekta-700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aspekta';
+  src: url('./assets/fonts/Aspekta-200/Aspekta-800.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Aspekta', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Hide scrollbars completely for Chrome, Safari, Edge and Opera while allowing scroll */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Page wrapper calibrated to 1920px base width */
+.page-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #000000;
+}
+
+/* ==========================================================================
+   Section 1: Hero Section
+   Dimensions: 1920px x 1037px
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 100vh;
+  min-height: 650px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+/* Black & White Hero Background Image */
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%) contrast(1.1) brightness(0.85);
+  z-index: 1;
+}
+
+/* Radial Gradient Overlay as per Figma Spec (Ref img 5) */
+.hero-radial-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.22) 22%, rgba(0, 0, 0, 0.95) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hero Logo: 98px x 67px, Top: 72px */
+.hero-logo-container {
+  position: absolute;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98px;
+  height: 67px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-logo-container:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.hero-logo {
+  width: 98px;
+  height: 67px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Hero Content Container: 1274px x 438px
+   Centered vertically & horizontally within 100vh Hero section
+*/
+.hero-content {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 20px);
+  transform: translate(-50%, -50%);
+  width: 1274px;
+  max-width: 90vw;
+  height: auto;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  z-index: 5;
+}
+
+/* Text Container: 1274px x 210px, Gap: 44px */
+.hero-text-container {
+  width: 1274px;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+}
+
+/* Heading Title (ref img 2)
+   Font: Aspekta, Weight: 800, Size: 64px, Line height: 98%, Letter spacing: -2%
+*/
+.hero-heading {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 98%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  width: 1274px;
+}
+
+/* Subtitle (ref img 3)
+   Dimensions: 594px x 40px
+   Font: Aspekta, Weight: 400, Size: 20px, Line height: 98%, Letter spacing: -2%
+*/
+.hero-subtitle {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 98%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #FFFFFF;
+  width: 594px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Yellow Dropdown Button: 273px x 43px, Background: #F1C565 */
+.hero-dropdown-btn {
+  width: 273px;
+  height: 43px;
+  background: #F1C565;
+  border: none;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #42543C;
+
+  transition: background-color 0.2s ease;
+}
+
+.hero-dropdown-btn:hover {
+  background-color: #f5cf79;
+}
+
+.hero-dropdown-btn:active {
+  background-color: #e5b958;
+}
+
+.hero-dropdown-icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.hero-dropdown-btn:hover .hero-dropdown-icon {
+  transform: translateY(2px);
+}
+
+/* Bottom Bar: 1920px x 81px — Fixed sticky bar at bottom of viewport */
+.hero-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 81px;
+  background: rgba(18, 20, 22, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 54px;
+  z-index: 1000;
+}
+
+.bottom-bar-brand {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.brand-svg {
+  width: 141px;
+  height: 16px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Toggle Container: 235px x 37px */
+.hero-toggle-container {
+  width: 235px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 4px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.language-toggle {
+  width: 82px;
+  height: 37px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lang-btn {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-btn.active {
+  background: #FFFFFF;
+  color: #121416;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lang-btn:hover:not(.active) {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Section 2: Why August 14th?
+   Dimensions: 1920px x 1061px
+   Background: #1E2321
+   ========================================================================== */
+.why-august-section {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 1061px;
+  margin: 0 auto;
+  background: #1E2321;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Container: 1280px wide */
+.why-august-container {
+  width: 1280px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 81px;
+}
+
+/* Text Side: 633px x 561px */
+.why-august-text {
+  width: 633px;
+  height: 561px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.why-august-main-heading {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.why-august-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.why-august-sub-heading {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  /* text-align: center; */
+  /* Add this line to center the text */
+}
+
+.why-august-paragraph {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  letter-spacing: -0.01em;
+  text-align: justify;
+  color: #FFFFFF;
+  opacity: 0.75;
+}
+
+/* Section 2 Button: 231px x 43px, Background: #42543C, Text: #F1C565 */
+.why-august-btn {
+  width: 231px;
+  height: 43px;
+  background: #42543C;
+  border: none;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #F1C565;
+
+  transition: background-color 0.2s ease;
+}
+
+.why-august-btn:hover {
+  background-color: #4d6246;
+}
+
+.why-august-btn:active {
+  background-color: #384a32;
+}
+
+.why-august-btn-icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.why-august-btn:hover .why-august-btn-icon {
+  transform: translateY(2px);
+}
+
+/* Image Side: 566px x 522px */
+.why-august-img-wrapper {
+  width: 566px;
+  height: 522px;
+  flex-shrink: 0;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.why-august-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%) contrast(1.1);
+  display: block;
+}
+
+/* Responsive Scaling below 1920px base width */
+@media (max-width: 1920px) {
+
+  .hero-section,
+  .why-august-section {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 1320px) {
+  .hero-content {
+    width: 90%;
+    left: 5%;
+    transform: none;
+  }
+
+  .hero-text-container {
+    width: 100%;
+  }
+
+  .hero-heading {
+    width: 100%;
+    font-size: 48px;
+  }
+
+  .hero-subtitle {
+    width: 90%;
+    max-width: 594px;
+    font-size: 18px;
+  }
+
+  .why-august-section {
+    height: auto;
+    padding: 80px 40px;
+  }
+
+  .why-august-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .why-august-text {
+    width: 100%;
+    height: auto;
+  }
+
+  .why-august-img-wrapper {
+    width: 100%;
+    max-width: 566px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100vh;
+    min-height: 700px;
+  }
+
+  .hero-heading {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    width: 100%;
+    font-size: 15px;
+    height: auto;
+  }
+
+  .hero-bottom-bar {
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    bottom: 120px;
+    height: auto;
+    gap: 30px;
+  }
+
+  .why-august-section {
+    padding: 60px 20px;
+  }
+
+  .why-august-main-heading {
+    font-size: 28px;
+  }
+
+  .why-august-sub-heading {
+    font-size: 17px;
+    align-items: center;
+  }
+
+  .why-august-paragraph {
+    font-size: 14px;
+  }
+
+  .why-august-img-wrapper {
+    height: 350px;
+  }
+}
+
+/* ==========================================================================
+   Section 3: Infinite Scroll Ticker / Carousel
+   Dimensions: 1920px x 403px
+   Text container height: 57px
+   Stars: 16px x 16px
+   ========================================================================== */
+.ticker-section {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 403px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Background image */
+  background: url('./assets/image/flag3.png') no-repeat center center / cover;
+}
+
+/* Dark gradient overlay: #000000 at 61% (from Figma spec img 3) */
+.ticker-overlay-dark {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.61);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Red-dark gradient overlay: #301F1F at 66% (from Figma spec img 3) */
+.ticker-overlay-red {
+  position: absolute;
+  inset: 0;
+  background: rgba(48, 31, 31, 0.66);
+  z-index: 2;
+  pointer-events: none;
+  /* Vignette left/right fade to deepen the edges */
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(48, 31, 31, 0.35) 20%,
+      rgba(48, 31, 31, 0.35) 80%,
+      rgba(0, 0, 0, 0.82) 100%);
+}
+
+/* Ticker wrapper: full width, centered vertically, clips overflow */
+.ticker-wrapper {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 57px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Ticker track — contains two identical groups for seamless loop */
+.ticker-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+
+
+/* Each group of words + stars */
+.ticker-group {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  /* Figma paragraph spacing: 24px */
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+
+/* Typography: Aspekta, 800, 40px, line-height 100%, letter-spacing 0% */
+.ticker-word {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* Star icon: 16px x 16px */
+.ticker-star {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Infinite scroll keyframe animation
+   Moves the track exactly one group-width to the left, creating a seamless loop
+   because the second group is an identical duplicate
+*/
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ticker-section {
+    height: 250px;
+  }
+
+  .ticker-word {
+    font-size: 26px;
+  }
+
+  .ticker-star {
+    width: 12px;
+    height: 12px;
+  }
+
+  .ticker-wrapper {
+    height: 40px;
+  }
+
+  .ticker-group {
+    gap: 16px;
+    padding: 0 16px;
+  }
+}
+
+/* ==========================================================================
+   Section 4: The Walk For Honor Concept
+   Section Dimensions: 1920px x 2669px
+   Content Container: 1274px x 2299px
+   Background: #FFFFFF
+   ========================================================================== */
+.concept-section {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 2669px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 185px 0;
+  /* top/bottom padding to center the 2299px container in 2669px */
+}
+
+/* Content Container: 1274px wide, stacked vertically */
+.concept-container {
+  width: 1274px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Section Heading
+   Font: Aspekta, Weight: 800, Size: 64px, Line-height: 100%, Letter-spacing: 0%, Color: #000000
+*/
+.concept-heading {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+/* Rows Container: 1274px x 2129px (3 rows of 709px height) */
+.concept-rows {
+  width: 1274px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Each row: flex, 1274px wide x 709px tall, gap 0 so images align diagonally at 637px center line */
+.concept-row {
+  width: 1274px;
+  height: 709px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* Row layout variants */
+.concept-row--img-left,
+.concept-row--img-right {
+  flex-direction: row;
+}
+
+/* Image side: 637px x 709px (exactly half of 1274px container) */
+.concept-img-wrapper {
+  width: 637px;
+  height: 709px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.concept-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Text side outer shell: 637px x 709px with 40px left and right padding */
+.concept-text-wrapper {
+  width: 637px;
+  height: 709px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Inner container */
+.concept-inner {
+  width: 100%;
+  height: 429px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  overflow: visible;
+}
+
+/* Logo in inner container */
+.concept-logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+}
+
+/* Text body: full width of concept-inner, 24px paragraph spacing */
+.concept-text-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Paragraph text (Figma Spec)
+   Font: Aspekta, Weight: 600, Size: 20px, Line-height: 100%, Paragraph Spacing: 24px, Letter-spacing: 0%, Align: Justified, Color: #000000
+*/
+.concept-paragraph {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  text-align: justify;
+  color: #000000;
+}
+
+/* Quote text
+   Font: Aspekta, Weight: 400, Size: 20px, Line-height: 100%, Letter-spacing: 0%, Color: #000000, slightly faint
+   Spacing: 40px top and bottom
+   Left stroke: 2px solid #F1C565
+*/
+.concept-quote {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  text-align: justify;
+  color: #000000;
+  opacity: 0.55;
+  font-style: normal;
+  border-left: 2px solid #F1C565;
+  padding-left: 14px;
+  margin: 40px 0;
+}
+
+/* Row 3 image — Black & White */
+.concept-img--bw {
+  filter: grayscale(100%) contrast(1.1);
+}
+
+/* Section 4 Button: same styling as Section 2 (231x43, #42543C bg, #F1C565 text) */
+.concept-btn {
+  width: 231px;
+  height: 43px;
+  background: #42543C;
+  border: none;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 8px;
+
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #F1C565;
+
+  transition: background-color 0.2s ease;
+}
+
+.concept-btn:hover {
+  background-color: #4d6246;
+}
+
+.concept-btn:active {
+  background-color: #384a32;
+}
+
+.concept-btn-icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.concept-btn:hover .concept-btn-icon {
+  transform: translateY(2px);
+}
+
+/* Responsive for Section 4 */
+@media (max-width: 1320px) {
+  .concept-section {
+    padding: 80px 40px;
+    min-height: unset;
+  }
+
+  .concept-container,
+  .concept-rows,
+  .concept-row {
+    width: 100%;
+    height: auto;
+  }
+
+  .concept-row--img-left,
+  .concept-row--img-right {
+    flex-direction: column;
+  }
+
+  .concept-img-wrapper {
+    width: 100%;
+    height: 420px;
+  }
+
+  .concept-text-wrapper {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .concept-text-body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .concept-heading {
+    font-size: 36px;
+  }
+
+  .concept-paragraph,
+  .concept-quote {
+    font-size: 16px;
+  }
+
+  .concept-img-wrapper {
+    height: 280px;
+  }
+}
+
+/* ==========================================================================
+   Section 5: Static Banner - INFINITE SCROLL ON ALL DEVICES
+   ========================================================================== */
+.banner-section {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 403px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('./assets/image/flag3.png') no-repeat center center / cover;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.banner-wrapper {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.banner-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  animation: banner-scroll 15s linear infinite;
+  will-change: transform;
+  gap: 40px;
+  padding: 0 40px;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.banner-text {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.banner-star {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes banner-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== Responsive for smaller screens ===== */
+@media (max-width: 768px) {
+  .banner-section {
+    height: 120px;
+  }
+
+  .banner-track {
+    gap: 24px;
+    padding: 0 24px;
+    animation-duration: 12s;
+  }
+
+  .banner-text {
+    font-size: 20px;
+  }
+
+  .banner-star {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-section {
+    height: 90px;
+  }
+
+  .banner-track {
+    gap: 16px;
+    padding: 0 16px;
+    animation-duration: 10s;
+  }
+
+  .banner-text {
+    font-size: 16px;
+  }
+
+  .banner-star {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ==========================================================================
+   Section 6: Practical Information
+   Section Dimensions: 1920px x 1760px
+   Content Container: 1274px x 1399px (margin-top: 120px)
+   Cards Grid Container: 1274px x 1350px
+   Card Dimensions: 624px x 406px
+   Background: #FFFFFF
+   ========================================================================== */
+.practical-section {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 1760px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.practical-container {
+  width: 1274px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading: PRACTICAL INFORMATION
+   Font: Aspekta, Weight: 800, Size: 48px, Line-height: 100%, Letter-spacing: 0%, Color: #42543C, Align: Center, Transform: Capitalize
+   Margin-bottom: 80px
+*/
+.practical-heading {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #42543C;
+  /* WFH Green */
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+/* Cards Grid: 1274px wide x 1350px tall, 2 columns x 3 rows */
+.practical-grid {
+  width: 1274px;
+  display: grid;
+  grid-template-columns: repeat(2, 624px);
+  gap: 26px 26px;
+  /* row-gap: 66px, column-gap: 26px */
+  justify-content: space-between;
+}
+
+/* Base Card: 624px x 406px */
+.practical-card {
+  width: 624px;
+  height: 406px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Unified Full-Width Card for Row 3: 1274px x 406px */
+.practical-card--full {
+  grid-column: 1 / -1;
+  width: 1274px;
+  height: 406px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #1E2321;
+  overflow: hidden;
+}
+
+.practical-full-img-wrapper {
+  width: 624px;
+  height: 406px;
+  padding: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.practical-full-content {
+  width: 650px;
+  height: 406px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+}
+
+/* Light Card BG: #E5E5E55C */
+.practical-card--light {
+  background: rgba(229, 229, 229, 0.36);
+  /* #E5E5E55C */
+  color: #1E2321;
+}
+
+.practical-card--light .practical-card-title {
+  color: #1E2321;
+}
+
+.practical-card--light .practical-card-text {
+  color: #1E2321;
+  opacity: 0.8;
+}
+
+/* Dark Card BG: #1E2321 */
+.practical-card--dark {
+  background: #1E2321;
+  color: #FFFFFF;
+}
+
+.practical-card--dark .practical-card-title {
+  color: #FFFFFF;
+}
+
+.practical-card--dark .practical-card-text {
+  color: #FFFFFF;
+  opacity: 0.75;
+}
+
+/* Image Card: 624px x 406px */
+.practical-card--img {
+  padding: 0;
+  border-radius: 0;
+}
+
+.practical-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Round Icon Badge */
+.practical-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #42543C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.practical-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* Card Titles
+   Font: Aspekta, Weight: 600, Size: 36px, Line-height: 100%, Letter-spacing: 0%
+*/
+.practical-card-title {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+}
+
+/* Special MONUMENT AUX MORTS span: Weight 250 */
+.practical-card-title .title-light {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 250;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0em;
+}
+
+/* Card Paragraphs
+   Font: Aspekta, Weight: 400, Size: 20px, Line-height: 100%, Letter-spacing: 0%, Align: Justified
+*/
+.practical-card-text {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0em;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 1320px) {
+  .practical-section {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
+  .practical-container {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .practical-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .practical-card {
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .practical-card-title {
+    font-size: 26px;
+  }
+
+  .practical-card-title .title-light {
+    font-size: 26px;
+  }
+
+  .practical-card-text {
+    font-size: 16px;
+  }
+}
+
+/* ==========================================================================
+   Section 7: Itinerary
+   Section Dimensions: 1920px x 1296px
+   Background: assets/image/map.png
+   Text Container: 633px x 796px, position 205px from right, 250px top/bottom
+   ========================================================================== */
+/* ===== FIXED: Itinerary Section - Full Width, No Limits ===== */
+.itinerary-section {
+  position: relative;
+  width: 100%;
+  /* Takes the full width of the wrapper */
+  max-width: 100%;
+  /* REMOVED the 1920px cap */
+  height: 1296px;
+  margin: 0;
+  /* REMOVED auto-centering */
+  overflow: hidden;
+  background-color: #0F0F0F;
+  box-sizing: border-box;
+}
+
+.itinerary-container {
+  position: relative;
+  z-index: 5;
+  width: 1920px;
+  height: 1296px;
+  padding: 250px 80px 250px 60px;
+  /* CHANGED: more padding on RIGHT */
+  display: flex;
+  justify-content: flex-end;
+  /* CHANGED: pushes content to the RIGHT */
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.itinerary-content {
+  width: 633px;
+  height: 796px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* Keep text left-aligned inside the block */
+  gap: 23px;
+  box-sizing: border-box;
+}
+
+/* Full Width Background Map Image */
+.itinerary-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 25% center;
+  z-index: 1;
+  display: block;
+}
+
+/* Linear Gradient Overlay (Figma Spec: #000000 0% to #0F0F0F)
+   Fades gently from transparent map view on left to solid #0F0F0F dark background behind text container on right
+*/
+/* ===== UPDATED: Itinerary Container (Text on LEFT) ===== */
+
+/* ===== UPDATED: Overlay Gradient (Darkens the LEFT side for readability) ===== */
+.itinerary-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      /* CHANGED: darkens the RIGHT side */
+      transparent 15%,
+      /* Map visible on the left */
+      rgba(15, 15, 15, 0.2) 40%,
+      rgba(15, 15, 15, 0.85) 70%,
+      #0F0F0F 100%
+      /* Solid dark on the right for text readability */
+    );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Text Container: 633px wide x 796px tall */
+
+/* Section Title: ITINERARY
+   Font: Aspekta, Weight: 600, Size: 36px, Line-height: 100%, Letter-spacing: 0%
+*/
+.itinerary-title {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+/* Intro Paragraph
+   Font: Aspekta, Weight: 400, Size: 20px
+*/
+.itinerary-intro {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  color: #FFFFFF;
+  opacity: 0.9;
+}
+
+/* Bullet List */
+
+.itinerary-list {
+  position: relative;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  /* No extra spacing between items */
+  width: 100%;
+  padding-left: 0;
+}
+
+.itinerary-list::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  /* Center of 12px dot (12/2 - 2/2 = 5) */
+  top: 38px;
+  /* Top of first dot: (88 - 12) / 2 = 38px */
+  bottom: 38px;
+  /* Bottom of last dot: same offset */
+  width: 2px;
+  background: rgba(241, 197, 101, 0.5);
+  z-index: 0;
+}
+
+.itinerary-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: 88px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.itinerary-bullet-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #F1C565;
+  flex-shrink: 0;
+  margin-top: 0;
+  /* Centered by align-items */
+  position: relative;
+  z-index: 2;
+  border: 2px solid #0F0F0F;
+  box-shadow: 0 0 0 1px rgba(241, 197, 101, 0.3);
+}
+
+
+.itinerary-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Bullet Title
+   Font: Aspekta, Weight: 700, Size: 20px
+*/
+.itinerary-bullet-title {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  color: #FFFFFF;
+}
+
+/* Bullet Subtext
+   Font: Aspekta, Weight: 400, Size: 15px, Line-height: 100%, Letter-spacing: -1%, Align: Justified
+*/
+.itinerary-bullet-subtext {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  text-align: justify;
+  color: #FFFFFF;
+  opacity: 0.75;
+}
+
+/* Button: Background #9D9A75 */
+.itinerary-btn {
+  width: 231px;
+  height: 43px;
+  flex-shrink: 0;
+  background: #9D9A75;
+  border: none;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+
+  transition: background-color 0.2s ease;
+}
+
+.itinerary-btn:hover {
+  background-color: #aaa782;
+}
+
+.itinerary-btn:active {
+  background-color: #8c8964;
+}
+
+.itinerary-btn-icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.itinerary-btn:hover .itinerary-btn-icon {
+  transform: translateY(2px);
+}
+
+/* ==========================================================================
+   Section 8: Registration
+   Section Dimensions: 1920px x 906px
+   Background: #1E2321
+   Container: 1280px – two columns (left 380px text, right 876px form)
+   Form panel: white dashed border, numbered field headers, 2-col phone+email row
+   ========================================================================== */
+.registration-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 906px;
+  margin: 0;
+  background: #1E2321;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.registration-container {
+  width: 1280px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 80px;
+  box-sizing: border-box;
+}
+
+/* ===== Left Column: Text + Logos ===== */
+.registration-left {
+  width: 324px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  align-self: stretch;
+}
+
+.registration-heading {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 115%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.registration-description {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 135%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+  text-align: justify;
+  margin: 0;
+}
+
+.registration-logos {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+  margin-top: 0;
+}
+
+.registration-logo-1 {
+  width: 119px;
+  height: 95px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.registration-logo-2 {
+  width: 99px;
+  height: 99px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ===== Right Column: Form ===== */
+.registration-right {
+  width: 876px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Form Group – header + white input box */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Field header row: number badge (left) + white line + label (right) */
+.form-field-header {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  height: 25px;
+}
+
+/* Number badge: 25×25 white square, green text */
+.form-field-num {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  color: #42543C;
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* White separator line between badge and label */
+.form-field-sep {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  display: block;
+  margin: 0 12px;
+}
+
+.form-label {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Input – WHITE background, 67px height */
+.form-input {
+  width: 100%;
+  height: 67px;
+  padding: 0 20px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 0;
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 400;
+  font-size: 17.78px;
+  color: #1E2321;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 400;
+  font-size: 17.78px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #B3B3B3;
+}
+
+.form-input:focus {
+  outline: 2px solid #F1C565;
+}
+
+/* Row for phone + email side by side */
+.form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Phone input with +237 prefix */
+.form-phone-wrapper {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 67px;
+  background: #FFFFFF;
+}
+
+.form-phone-prefix {
+  background: #FFFFFF;
+  color: #1E2321;
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 17.78px;
+  padding: 0 8px 0 20px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.form-input--phone {
+  background: #FFFFFF;
+  border: none;
+  border-radius: 0;
+  height: 100%;
+  padding-left: 0;
+}
+
+/* Bottom row: Quote (left) + Button (right) */
+.registration-bottom-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin-top: 20px;
+  min-height: 43px;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.registration-quote {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0em;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
+  text-align: left;
+  flex: 1;
+  margin: 0;
+}
+
+/* Button */
+.registration-btn {
+  height: 100%;
+  min-height: 52px;
+  padding: 0 24px;
+  flex-shrink: 0;
+  background: #42543C;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.registration-btn:hover {
+  background-color: #4d6246;
+}
+
+.registration-btn:active {
+  background-color: #384a32;
+}
+
+.registration-btn-icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.registration-btn:hover .registration-btn-icon {
+  transform: translateX(3px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1320px) {
+  .registration-section {
+    height: auto;
+    padding: 80px 40px;
+  }
+
+  .registration-container {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    border: 1px dashed rgba(100, 180, 255, 0.45);
+  }
+
+  .registration-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px dashed rgba(100, 180, 255, 0.45);
+    padding: 28px;
+  }
+
+  .registration-right {
+    width: 100%;
+  }
+
+  .registration-form {
+    height: auto;
+  }
+
+  .form-group {
+    min-height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .registration-heading {
+    font-size: 24px;
+  }
+
+  .registration-description {
+    font-size: 13px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row .form-group {
+    border-right: none;
+    border-bottom: 1px dashed rgba(100, 180, 255, 0.45);
+  }
+
+  .form-input {
+    font-size: 14px;
+  }
+
+  .registration-btn {
+    font-size: 12px;
+    padding: 0 14px;
+  }
+
+  .registration-quote {
+    font-size: 11px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1320px) {
+  .itinerary-section {
+    height: auto;
+  }
+
+  .itinerary-container {
+    padding: 80px 40px;
+    justify-content: center;
+  }
+
+  .itinerary-content {
+    width: 100%;
+    height: auto;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .itinerary-title {
+    font-size: 28px;
+  }
+
+  .itinerary-intro,
+  .itinerary-bullet-title {
+    font-size: 17px;
+  }
+
+  .itinerary-bullet-subtext {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================================
+   COMPREHENSIVE MOBILE RESPONSIVE OVERRIDES
+   ========================================================================== */
+
+/* ---------- Mobile: max-width 768px ---------- */
+@media (max-width: 768px) {
+
+  /* --- Hero Section --- */
+  .hero-section {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 580px;
+  }
+
+  .hero-logo-container {
+    top: 24px;
+    width: 70px;
+    height: 48px;
+  }
+
+  .hero-logo {
+    width: 70px;
+    height: 48px;
+  }
+
+  .hero-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: unset;
+    padding: 0 20px;
+    gap: 24px;
+  }
+
+  .hero-text-container {
+    width: 100%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .hero-heading {
+    width: 100%;
+    font-size: 28px;
+    line-height: 110%;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+  }
+
+  .hero-bottom-bar {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .brand-svg {
+    width: 110px;
+    height: 13px;
+  }
+
+  .hero-toggle-container {
+    width: auto;
+    height: 32px;
+    gap: 10px;
+  }
+
+  .icon-btn {
+    padding: 4px;
+  }
+
+  .icon-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .language-toggle {
+    width: 70px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .lang-btn {
+    font-size: 10px;
+    border-radius: 6px;
+  }
+
+  /* --- Why August 14th Section --- */
+  .why-august-section {
+    height: auto;
+    padding: 48px 20px;
+  }
+
+  .why-august-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .why-august-text {
+    width: 100%;
+    height: auto;
+  }
+
+  .why-august-main-heading {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .why-august-sub-heading {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .why-august-paragraph {
+    font-size: 14px;
+    line-height: 150%;
+    text-align: left;
+  }
+
+  .why-august-btn {
+    width: 100%;
+    max-width: 260px;
+    align-self: center;
+  }
+
+  .why-august-img-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+    order: -1;
+  }
+
+  /* --- Ticker / Carousel --- */
+  .ticker-section {
+    height: 180px;
+  }
+
+  .ticker-wrapper {
+    height: 36px;
+  }
+
+  .ticker-word {
+    font-size: 20px;
+  }
+
+  .ticker-star {
+    width: 10px;
+    height: 10px;
+  }
+
+  .ticker-group {
+    gap: 14px;
+    padding: 0 14px;
+  }
+
+  /* --- Concept Section --- */
+  .concept-section {
+    padding: 48px 20px;
+    min-height: unset;
+  }
+
+  .concept-container {
+    width: 100%;
+  }
+
+  .concept-heading {
+    font-size: 24px;
+    line-height: 110%;
+    margin-bottom: 32px;
+  }
+
+  .concept-rows {
+    width: 100%;
+  }
+
+  .concept-row {
+    width: 100%;
+    height: auto;
+    flex-direction: column !important;
+  }
+
+  .concept-img-wrapper {
+    width: 100%;
+    height: 240px;
+  }
+
+  .concept-text-wrapper {
+    width: 100%;
+    height: auto;
+    padding: 28px 16px;
+  }
+
+  .concept-inner {
+    height: auto;
+    gap: 16px;
+  }
+
+  .concept-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .concept-paragraph {
+    font-size: 15px;
+    line-height: 145%;
+    text-align: left;
+  }
+
+  .concept-quote {
+    font-size: 14px;
+    line-height: 140%;
+    margin: 20px 0;
+    padding-left: 12px;
+    text-align: left;
+  }
+
+  .concept-btn {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  /* --- Banner Section --- */
+  .banner-section {
+    height: 160px;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  .banner-text {
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+  }
+
+  .banner-star {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* --- Practical Information Section --- */
+  .practical-section {
+    min-height: auto;
+    padding: 48px 16px;
+  }
+
+  .practical-container {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .practical-heading {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  .practical-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .practical-card {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    padding: 28px 20px;
+  }
+
+  .practical-card--full {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .practical-full-img-wrapper {
+    width: 100%;
+    height: 220px;
+    padding: 8px;
+  }
+
+  .practical-full-content {
+    width: 100%;
+    height: auto;
+    padding: 28px 20px;
+  }
+
+  .practical-card-title {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .practical-card-title .title-light {
+    font-size: 20px;
+  }
+
+  .practical-card-text {
+    font-size: 14px;
+    line-height: 140%;
+    text-align: left;
+  }
+
+  /* --- Itinerary Section --- */
+  .itinerary-section {
+    height: auto;
+    min-height: unset;
+    display: flex;
+    flex-direction: column;
+    background-color: #0F0F0F;
+  }
+
+  .itinerary-bg-img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 190%;
+    height: 50vh;
+    object-fit: cover;
+    object-position: 0% center;
+    z-index: 1;
+    display: block;
+    opacity: 1;
+    order: -1;
+    border-bottom: 2px solid rgba(241, 197, 101, 0.3);
+  }
+
+  .itinerary-overlay {
+    display: none;
+  }
+
+  .itinerary-container {
+    width: 100%;
+    height: auto;
+    padding: 32px 20px 48px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .itinerary-content {
+    width: 100%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .itinerary-title {
+    font-size: 24px;
+  }
+
+  .itinerary-intro {
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  .itinerary-item {
+    height: auto;
+    min-height: 56px;
+    padding: 8px 0;
+  }
+
+  .itinerary-bullet-title {
+    font-size: 15px;
+    line-height: 130%;
+  }
+
+  .itinerary-bullet-subtext {
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .itinerary-btn {
+    width: 100%;
+    max-width: 240px;
+    align-self: left;
+  }
+
+  /* --- Registration Section --- */
+  .registration-section {
+    height: auto;
+    padding: 48px 16px 100px;
+  }
+
+  .registration-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+    border: none;
+  }
+
+  .registration-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: none;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .registration-heading {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .registration-description {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .registration-logos {
+    justify-content: center;
+    gap: 28px;
+    margin-top: 20px;
+  }
+
+  .registration-logo-1 {
+    width: 80px;
+    height: 64px;
+  }
+
+  .registration-logo-2 {
+    width: 66px;
+    height: 66px;
+  }
+
+  .registration-right {
+    width: 100%;
+  }
+
+  .registration-form {
+    height: auto;
+    gap: 16px;
+  }
+
+  .form-group {
+    min-height: unset;
+  }
+
+  .form-field-header {
+    height: 22px;
+  }
+
+  .form-field-num {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  .form-label {
+    font-size: 13px;
+  }
+
+  .form-input {
+    height: 52px;
+    font-size: 14px;
+    padding: 0 14px;
+  }
+
+  .form-input::placeholder {
+    font-size: 14px;
+  }
+
+  .form-phone-wrapper {
+    height: 52px;
+  }
+
+  .form-phone-prefix {
+    font-size: 14px;
+    padding: 0 6px 0 14px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row .form-group {
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .registration-bottom-row {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    margin-top: 16px;
+  }
+
+  .registration-quote {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .registration-btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 13px;
+    padding: 0 20px;
+    justify-content: center;
+  }
+}
+
+/* ---------- Very small screens: max-width 400px ---------- */
+@media (max-width: 400px) {
+  .hero-heading {
+    font-size: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+  .why-august-main-heading {
+    font-size: 20px;
+  }
+
+  .concept-heading {
+    font-size: 20px;
+  }
+
+  .banner-text {
+    font-size: 14px;
+  }
+
+  .practical-heading {
+    font-size: 20px;
+  }
+
+  .practical-card-title {
+    font-size: 18px;
+  }
+
+  .practical-card-title .title-light {
+    font-size: 18px;
+  }
+
+  .ticker-word {
+    font-size: 16px;
+  }
+}
+
+
+
+/* ==========================================================================
+   Section 4: The Walk For Honor Concept - MOBILE FIX
+   ========================================================================== */
+
+/* Responsive for Section 4 part2 */
+@media (max-width: 1320px) {
+  .concept-section {
+    padding: 80px 40px;
+    min-height: unset;
+  }
+
+  .concept-container,
+  .concept-rows {
+    width: 100%;
+    height: auto;
+  }
+
+  .concept-row {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .concept-row--img-left,
+  .concept-row--img-right {
+    flex-direction: column;
+  }
+
+  .concept-img-wrapper {
+    width: 100%;
+    height: 350px;
+    flex-shrink: 0;
+  }
+
+  .concept-text-wrapper {
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+    flex-shrink: 0;
+  }
+
+  .concept-text-body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .concept-section {
+    padding: 40px 16px;
+  }
+
+  .concept-heading {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .concept-rows {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Reorder rows on mobile: Row 1, Row 3, Row 2 */
+  .concept-row:nth-child(1) {
+    order: 1;
+  }
+
+  .concept-row:nth-child(2) {
+    order: 3;
+    /* Row with button moves to last */
+  }
+
+  .concept-row:nth-child(3) {
+    order: 2;
+  }
+
+  .concept-row {
+    margin-bottom: 30px;
+    flex-direction: column;
+  }
+
+  .concept-row:last-child {
+    margin-bottom: 0;
+  }
+
+  /* FOR ROW 2 (img-right) - Reverse the order so image comes first on mobile */
+  .concept-row:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .concept-row:nth-child(2) .concept-img-wrapper {
+    order: 1;
+  }
+
+  .concept-row:nth-child(2) .concept-text-wrapper {
+    order: 2;
+  }
+
+  .concept-img-wrapper {
+    height: 220px;
+  }
+
+  .concept-text-wrapper {
+    padding: 20px 16px;
+  }
+
+  .concept-inner {
+    gap: 14px;
+  }
+
+  .concept-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .concept-paragraph {
+    font-size: 15px;
+    line-height: 145%;
+    text-align: left;
+  }
+
+  .concept-quote {
+    font-size: 14px;
+    line-height: 140%;
+    margin: 16px 0;
+    padding-left: 12px;
+    text-align: left;
+  }
+
+  .concept-btn {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 400px) {
+  .concept-heading {
+    font-size: 22px;
+  }
+
+  .concept-img-wrapper {
+    height: 180px;
+  }
+
+  .concept-paragraph {
+    font-size: 14px;
+  }
+
+  .concept-quote {
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+/* ==========================================================================
+   Concept Section Images - Hover Overlay
+   ========================================================================== */
+
+.concept-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.concept-img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.concept-img-wrapper:hover::after {
+  opacity: 1;
+}

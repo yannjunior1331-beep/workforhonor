@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walk For Honor</title>
+  <meta name="description"
+    content="Ils se sont sacrifiés pour notre paix. Aujourd'hui, offrons-leur notre reconnaissance. Walk For Honor Cameroun." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-section" id="hero">
+      <img src="assets/image/heroimg.png" alt="Hero Background" class="hero-bg-img" />
+      <div class="hero-radial-overlay"></div>
+
+      <a href="#hero" class="hero-logo-container" aria-label="Walk For Honor Home">
+        <img src="assets/logo/hero.svg" alt="Walk For Honor Logo" class="hero-logo" width="98" height="67" />
+      </a>
+
+      <div class="hero-content">
+        <div class="hero-text-container">
+          <h1 class="hero-heading" data-i18n="hero_heading">
+            Ils se sont sacrifiés pour notre paix.<br />Aujourd'hui, offrons-leur notre reconnaissance.
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            À ceux qui ne sont jamais revenus. À ceux qui sont revenus blessés. À tous ceux qui ont servi le Cameroun.
+          </p>
+        </div>
+        <button class="hero-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false" id="heroMarchBtn"
+          onclick="window.location.href='#registration'">
+          <span data-i18n="btn_march">Je marche pour l'honneur</span>
+          <svg class="hero-dropdown-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="hero-bottom-bar">
+        <div class="bottom-bar-brand" id="brandText">
+          <img src="assets/wfh_svg.svg" alt="Walk For Honor" class="brand-svg" width="141" height="16" />
+        </div>
+        <div class="hero-toggle-container">
+          <button class="icon-btn" type="button" aria-label="Toggle Sound" id="speakerBtn" title="Toggle audio">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+            </svg>
+          </button>
+          <button class="icon-btn" type="button" aria-label="Open Navigation Menu" id="menuBtn" title="Menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+            </svg>
+          </button>
+          <div class="language-toggle" role="group" aria-label="Language Selector">
+            <button class="lang-btn active" type="button" id="langFr">FR</button>
+            <button class="lang-btn" type="button" id="langEn">EN</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY AUGUST 14 ===== -->
+    <section class="why-august-section" id="why-august">
+      <div class="why-august-container">
+        <div class="why-august-text">
+          <h2 class="why-august-main-heading" data-i18n="why_heading">POURQUOI LE 14 AOÛT ?</h2>
+          <div class="why-august-block">
+            <h3 class="why-august-sub-heading" data-i18n="why_sub1">UNE DATE QUI PORTE LA MÉMOIRE DE LA NATION</h3>
+            <p class="why-august-paragraph" data-i18n="why_p1">
+              Le 14 août n'est pas une date choisie au hasard. C'est le jour où, en 2008, la presqu'île de Bakassi a été
+              rétrocédée au Cameroun — l'aboutissement d'un long combat pour la souveraineté et l'intégrité territoriale
+              du pays.
+            </p>
+            <p class="why-august-paragraph" data-i18n="why_p2">
+              Cette victoire, la Nation la doit à celles et ceux qui ont servi, qui se sont battus, qui parfois n'en
+              sont jamais revenus.
+            </p>
+            <p class="why-august-paragraph" data-i18n="why_p3">
+              C'est pourquoi cette date est devenue, depuis 2008, la Journée du Souvenir : un jour où le Cameroun
+              s'arrête pour se souvenir de ceux qui sont tombés pour la Patrie, honorer ceux qui ont servi, et
+              transmettre aux générations futures les valeurs de courage, de sacrifice et d'unité nationale.
+            </p>
+          </div>
+          <div class="why-august-block">
+            <h3 class="why-august-sub-heading" data-i18n="why_sub2">CE QUE CETTE JOURNÉE REPRÉSENTE</h3>
+            <p class="why-august-paragraph" data-i18n="why_p4">
+              Se souvenir, ce n'est pas regarder en arrière. C'est comprendre ce qui a été sacrifié pour que nous ayons,
+              aujourd'hui, la paix et la souveraineté sur notre territoire.
+            </p>
+            <p class="why-august-paragraph" data-i18n="why_p5">
+              C'est aussi un acte tourné vers l'avenir : transmettre cette mémoire aux jeunes générations, pour qu'elles
+              sachent d'où vient leur pays — et ce qu'il a fallu pour le défendre.
+            </p>
+          </div>
+          <button class="why-august-btn" type="button" id="whyAugustMarchBtn">
+            <span data-i18n="btn_march">Je marche pour l'honneur</span>
+            <svg class="why-august-btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+            </svg>
+          </button>
+        </div>
+        <div class="why-august-img-wrapper">
+          <img src="assets/image/flag_section2.png" alt="Saluting Cameroon Flag" class="why-august-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TICKER ===== -->
+    <section class="ticker-section" id="carousel">
+      <div class="ticker-overlay-dark"></div>
+      <div class="ticker-overlay-red"></div>
+      <div class="ticker-wrapper">
+        <div class="ticker-track" id="tickerTrack">
+          <!-- Populated dynamically via JS renderTicker() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONCEPT ===== -->
+    <section class="concept-section" id="concept">
+      <div class="concept-container">
+        <h2 class="concept-heading" data-i18n="concept_heading">LE CONCEPT WALK FOR HONOR</h2>
+        <div class="concept-rows">
+          <div class="concept-row concept-row--img-left">
+            <div class="concept-img-wrapper">
+              <img src="assets/image/img1_section3.png" alt="Military parade at Monument aux Morts"
+                class="concept-img" />
+            </div>
+            <div class="concept-text-wrapper">
+              <div class="concept-inner">
+                <img src="assets/logo/logo_section3.svg" alt="Walk For Honor mark" class="concept-logo" width="48"
+                  height="48" />
+                <div class="concept-text-body">
+                  <p class="concept-paragraph" data-i18n="concept_p1">
+                    La journée s'ouvre au Monument aux Morts, par une prise d'armes en hommage à ceux qui sont tombés
+                    pour la Patrie.
+                  </p>
+                  <p class="concept-paragraph" data-i18n="concept_p2">
+                    De là, une marche patriotique rassemble la Nation : anciens combattants, militaires, jeunes,
+                    familles et citoyens, côte à côte, jusqu'à la Place de l'Indépendance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="concept-row concept-row--img-right">
+            <div class="concept-text-wrapper">
+              <div class="concept-inner">
+                <img src="assets/logo/logo_section3.svg" alt="Walk For Honor mark" class="concept-logo" width="48"
+                  height="48" />
+                <div class="concept-text-body">
+                  <p class="concept-paragraph" data-i18n="concept_p3">
+                    Marcher, ce jour-là, c'est transformer l'hommage officiel en un geste collectif. Ce n'est plus
+                    seulement assister à une cérémonie — c'est y prendre part.
+                  </p>
+                  <blockquote class="concept-quote" data-i18n="concept_quote">
+                    Ils se sont sacrifiés pour notre paix. Aujourd'hui, offrons-leur notre reconnaissance.
+                  </blockquote>
+                  <button class="concept-btn" type="button" id="conceptMarchBtn">
+                    <span data-i18n="btn_march">Je marche pour l'honneur</span>
+                    <svg class="concept-btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="concept-img-wrapper">
+              <img src="assets/image/img2_secion3.png" alt="Soldiers marching in formation" class="concept-img" />
+            </div>
+          </div>
+          <div class="concept-row concept-row--img-left">
+            <div class="concept-img-wrapper">
+              <img src="assets/image/img3_section3.png" alt="Soldiers at sunset" class="concept-img concept-img--bw" />
+            </div>
+            <div class="concept-text-wrapper">
+              <div class="concept-inner">
+                <img src="assets/logo/logo_section3.svg" alt="Walk For Honor mark" class="concept-logo" width="48"
+                  height="48" />
+                <div class="concept-text-body">
+                  <p class="concept-paragraph" data-i18n="concept_p4">
+                    À chaque pas, nous gardons leur mémoire vivante.
+                  </p>
+                  <p class="concept-paragraph" data-i18n="concept_p5">
+                    Nous rappelons à tous que leur engagement ne sera jamais oublié.
+                  </p>
+                  <p class="concept-paragraph" data-i18n="concept_p6">
+                    Car une Nation qui se souvient est une Nation qui grandit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BANNER ===== -->
+    <section class="banner-section" id="banner">
+      <div class="banner-overlay"></div>
+      <div class="banner-wrapper">
+        <div class="banner-track" id="bannerTrack">
+          <span class="banner-text" data-i18n="banner_1">UNE MARCHE POUR LA MÉMOIRE</span>
+          <svg class="banner-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="#F1C565"
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          <span class="banner-text" data-i18n="banner_2">UNE MARCHE POUR LA RECONNAISSANCE</span>
+          <svg class="banner-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="#F1C565"
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          <span class="banner-text" data-i18n="banner_3">UNE MARCHE POUR L'HONNEUR</span>
+          <svg class="banner-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="#F1C565"
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          <!-- DUPLICATE for seamless scroll on mobile -->
+          <span class="banner-text" data-i18n="banner_1">UNE MARCHE POUR LA MÉMOIRE</span>
+          <svg class="banner-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="#F1C565"
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          <span class="banner-text" data-i18n="banner_2">UNE MARCHE POUR LA RECONNAISSANCE</span>
+          <svg class="banner-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="#F1C565"
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          <span class="banner-text" data-i18n="banner_3">UNE MARCHE POUR L'HONNEUR</span>
+          <svg class="banner-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="#F1C565"
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRACTICAL ===== -->
+    <section class="practical-section" id="practical">
+      <div class="practical-container">
+        <h2 class="practical-heading" data-i18n="practical_heading">INFOS PRATIQUES</h2>
+        <div class="practical-grid">
+          <!-- Card 1 -->
+          <div class="practical-card practical-card--light">
+            <div class="practical-icon-badge">
+              <img src="assets/logo/svg1_sec4.svg" alt="Calendar icon" class="practical-icon" />
+            </div>
+            <h3 class="practical-card-title" data-i18n="practical_card1_title">DATE : 14 AOÛT — YAOUNDÉ</h3>
+            <p class="practical-card-text" data-i18n="practical_card1_text">
+              La Journée du Souvenir se tient à Yaoundé, jour de rassemblement national autour de nos héros.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div class="practical-card practical-card--dark">
+            <div class="practical-icon-badge">
+              <img src="assets/logo/svg2_sec4.svg" alt="Location icon" class="practical-icon" />
+            </div>
+            <h3 class="practical-card-title" data-i18n="practical_card2_title">LIEU : YAOUNDÉ</h3>
+            <p class="practical-card-text" data-i18n="practical_card2_text">
+              La marche relie plusieurs lieux symboliques de la capitale.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div class="practical-card practical-card--dark">
+            <div class="practical-icon-badge">
+              <img src="assets/logo/svg3_sec4.svg" alt="Assembly icon" class="practical-icon" />
+            </div>
+            <h3 class="practical-card-title" data-i18n="practical_card3_title">
+              POINT DE RASSEMBLEMENT :<br />
+              <span class="title-light">MONUMENT AUX MORTS.</span>
+            </h3>
+          </div>
+          <!-- Card 4 -->
+          <div class="practical-card practical-card--light">
+            <div class="practical-icon-badge">
+              <img src="assets/logo/svg4_sec4.svg" alt="Clock icon" class="practical-icon" />
+            </div>
+            <h3 class="practical-card-title" data-i18n="practical_card4_title">TEMPS: 08:30</h3>
+            <p class="practical-card-text" data-i18n="practical_card4_text">
+              Le rassemblement débutera tôt le matin, à 08h30, afin d'assurer un démarrage unifié et ponctuel.
+            </p>
+          </div>
+          <!-- Card 5: Full Width -->
+          <div class="practical-card practical-card--full practical-card--dark">
+            <div class="practical-full-img-wrapper">
+              <img src="assets/image/img1sec4.png" alt="Soldiers marching in Yaoundé" class="practical-card-img" />
+            </div>
+            <div class="practical-full-content">
+              <div class="practical-icon-badge">
+                <img src="assets/logo/svg5_sec4.svg" alt="Kit icon" class="practical-icon" />
+              </div>
+              <h3 class="practical-card-title" data-i18n="practical_card5_title">
+                KIT PARTICIPANT : UN T-SHIRT BLANC + UNE BOUTEILLE D'EAU
+              </h3>
+              <p class="practical-card-text" data-i18n="practical_card5_text">
+                Chaque participant reçoit son kit sur place le jour de la marche.
+              </p>
+            </div>
+          </div>
+        </div> <!-- end practical-grid -->
+      </div> <!-- end practical-container -->
+    </section> <!-- end practical-section -->
+
+    <!-- ===== ITINERARY — NOW A STANDALONE SECTION ===== -->
+    <section class="itinerary-section" id="itinerary">
+      <img src="assets/image/map.png" alt="Yaoundé Itinerary Map" class="itinerary-bg-img" />
+      <div class="itinerary-overlay"></div>
+      <div class="itinerary-container">
+        <div class="itinerary-content">
+          <h2 class="itinerary-title" data-i18n="itinerary_title">ITINÉRAIRE</h2>
+          <p class="itinerary-intro" data-i18n="itinerary_intro">
+            Un parcours à travers l'histoire de la ville, du Monument aux Morts à la Place de l'Indépendance.
+          </p>
+          <ul class="itinerary-list">
+            <li class="itinerary-item">
+              <span class="itinerary-bullet-dot"></span>
+              <div class="itinerary-item-body">
+                <h3 class="itinerary-bullet-title" data-i18n="itin_1_title">Départ : Monument aux Morts (prise d'armes
+                  et hommage)</h3>
+              </div>
+            </li>
+            <li class="itinerary-item">
+              <span class="itinerary-bullet-dot"></span>
+              <div class="itinerary-item-body">
+                <h3 class="itinerary-bullet-title" data-i18n="itin_2_title">Ministère de la Défense</h3>
+                <p class="itinerary-bullet-subtext" data-i18n="itin_2_sub">Symbole de l'unité nationale</p>
+              </div>
+            </li>
+            <li class="itinerary-item">
+              <span class="itinerary-bullet-dot"></span>
+              <div class="itinerary-item-body">
+                <h3 class="itinerary-bullet-title" data-i18n="itin_3_title">Poste Centrale</h3>
+                <p class="itinerary-bullet-subtext" data-i18n="itin_3_sub">Hommage aux forces armées</p>
+              </div>
+            </li>
+            <li class="itinerary-item">
+              <span class="itinerary-bullet-dot"></span>
+              <div class="itinerary-item-body">
+                <h3 class="itinerary-bullet-title" data-i18n="itin_4_title">Boulevard du 20 Mai</h3>
+                <p class="itinerary-bullet-subtext" data-i18n="itin_4_sub">Expression du patriotisme</p>
+              </div>
+            </li>
+            <li class="itinerary-item">
+              <span class="itinerary-bullet-dot"></span>
+              <div class="itinerary-item-body">
+                <h3 class="itinerary-bullet-title" data-i18n="itin_5_title">Carrefour « J'aime mon pays »</h3>
+                <p class="itinerary-bullet-subtext" data-i18n="itin_5_sub">Expression du patriotisme</p>
+              </div>
+            </li>
+            <li class="itinerary-item">
+              <span class="itinerary-bullet-dot"></span>
+              <div class="itinerary-item-body">
+                <h3 class="itinerary-bullet-title" data-i18n="itin_6_title">Montée Abbia</h3>
+                <p class="itinerary-bullet-subtext" data-i18n="itin_6_sub">Dernière portion du parcours</p>
+              </div>
+            </li>
+            <li class="itinerary-item">
+              <span class="itinerary-bullet-dot"></span>
+              <div class="itinerary-item-body">
+                <h3 class="itinerary-bullet-title" data-i18n="itin_7_title">Arrivée : Place de l'Indépendance (Esplanade
+                  de l'Hôtel de Ville)</h3>
+                <p class="itinerary-bullet-subtext" data-i18n="itin_7_sub">Point d'arrivée de la promenade</p>
+              </div>
+            </li>
+          </ul>
+          <button class="itinerary-btn" type="button" id="itineraryMarchBtn">
+            <span data-i18n="btn_march">Je marche pour l'honneur</span>
+            <svg class="itinerary-btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REGISTRATION ===== -->
+    <section class="registration-section" id="registration">
+      <div class="registration-container">
+
+        <!-- Left Column: Text + Logos -->
+        <div class="registration-left">
+          <h2 class="registration-heading" data-i18n="reg_heading">REJOIGNEZ LA<br>MARCHE POUR<br>L'HONNEUR</h2>
+          <p class="registration-description" data-i18n="reg_desc">
+            Rejoignez des milliers de Camerounais pour marcher, ensemble, en hommage à nos anciens combattants, anciens
+            militaires et victimes de guerre.
+          </p>
+          <div class="registration-logos">
+            <img src="assets/logo/registration_2.svg" alt="Forces Logo" class="registration-logo-1" />
+            <img src="assets/logo/registration_1.svg" alt="ONACAM Logo" class="registration-logo-2" />
+          </div>
+        </div>
+
+        <!-- Right Column: Form -->
+        <div class="registration-right">
+          <form class="registration-form" id="registrationForm" novalidate>
+
+            <!-- Field 1: Full Name – full width -->
+            <div class="form-group form-group--full">
+              <div class="form-field-header">
+                <span class="form-field-num">1</span>
+                <span class="form-field-sep"></span>
+                <label class="form-label" for="reg-name" data-i18n="reg_label_name">Nom</label>
+              </div>
+              <input type="text" id="reg-name" class="form-input" data-i18n-placeholder="reg_ph_name"
+                placeholder="Entrez votre nom complet" />
+            </div>
+
+            <!-- Fields 2 & 3: Phone + Email – side by side -->
+            <div class="form-row">
+              <div class="form-group">
+                <div class="form-field-header">
+                  <span class="form-field-num">2</span>
+                  <span class="form-field-sep"></span>
+                  <label class="form-label" for="reg-phone" data-i18n="reg_label_phone">Numéro de téléphone</label>
+                </div>
+                <div class="form-phone-wrapper">
+                  <span class="form-phone-prefix">+237</span>
+                  <input type="tel" id="reg-phone" class="form-input form-input--phone" placeholder="" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-field-header">
+                  <span class="form-field-num">3</span>
+                  <span class="form-field-sep"></span>
+                  <label class="form-label" for="reg-email" data-i18n="reg_label_email">Adresse e-mail</label>
+                </div>
+                <input type="email" id="reg-email" class="form-input" data-i18n-placeholder="reg_ph_email"
+                  placeholder="Entrez votre e-mail" />
+              </div>
+            </div>
+
+            <!-- Field 4: City / Town – full width -->
+            <div class="form-group form-group--full">
+              <div class="form-field-header">
+                <span class="form-field-num">4</span>
+                <span class="form-field-sep"></span>
+                <label class="form-label" for="reg-city" data-i18n="reg_label_city">Ville / Localité de
+                  résidence</label>
+              </div>
+              <input type="text" id="reg-city" class="form-input" data-i18n-placeholder="reg_ph_city"
+                placeholder="eg. Buea" />
+            </div>
+
+            <!-- Bottom row: Quote + Button -->
+            <div class="registration-bottom-row">
+              <p class="registration-quote" data-i18n="reg_quote">
+                Ils se sont sacrifiés pour notre paix. Aujourd'hui, offrons-leur notre reconnaissance.
+              </p>
+              <button type="submit" class="registration-btn">
+                <span data-i18n="reg_btn">INSCRIVEZ-VOUS À LA MARCHE</span>
+                <svg class="registration-btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" fill="none" />
+                </svg>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </div> <!-- end page-wrapper -->
+
+  <script>
+    const translations = {
+      fr: {
+        meta_desc: "Ils se sont sacrifiés pour notre paix. Aujourd'hui, offrons-leur notre reconnaissance. Walk For Honor Cameroun.",
+        hero_heading: "Ils se sont sacrifiés pour notre paix.<br />Aujourd'hui, offrons-leur notre reconnaissance.",
+        hero_subtitle: "À ceux qui ne sont jamais revenus. À ceux qui sont revenus blessés. À tous ceux qui ont servi le Cameroun.",
+        btn_march: "Je marche pour l'honneur",
+
+        why_heading: "POURQUOI LE 14 AOÛT ?",
+        why_sub1: "UNE DATE QUI PORTE LA MÉMOIRE DE LA NATION",
+        why_p1: "Le 14 août n'est pas une date choisie au hasard. C'est le jour où, en 2008, la presqu'île de Bakassi a été rétrocédée au Cameroun — l'aboutissement d'un long combat pour la souveraineté et l'intégrité territoriale du pays.",
+        why_p2: "Cette victoire, la Nation la doit à celles et ceux qui ont servi, qui se sont battus, qui parfois n'en sont jamais revenus.",
+        why_p3: "C'est pourquoi cette date est devenue, depuis 2008, la Journée du Souvenir : un jour où le Cameroun s'arrête pour se souvenir de ceux qui sont tombés pour la Patrie, honorer ceux qui ont servi, et transmettre aux générations futures les valeurs de courage, de sacrifice et d'unité nationale.",
+        why_sub2: "CE QUE CETTE JOURNÉE REPRÉSENTE",
+        why_p4: "Se souvenir, ce n'est pas regarder en arrière. C'est comprendre ce qui a été sacrifié pour que nous ayons, aujourd'hui, la paix et la souveraineté sur notre territoire.",
+        why_p5: "C'est aussi un acte tourné vers l'avenir : transmettre cette mémoire aux jeunes générations, pour qu'elles sachent d'où vient leur pays — et ce qu'il a fallu pour le défendre.",
+
+        concept_heading: "LE CONCEPT WALK FOR HONOR",
+        concept_p1: "La journée s'ouvre au Monument aux Morts, par une prise d'armes en hommage à ceux qui sont tombés pour la Patrie.",
+        concept_p2: "De là, une marche patriotique rassemble la Nation : anciens combattants, militaires, jeunes, familles et citoyens, côte à côte, jusqu'à la Place de l'Indépendance.",
+        concept_p3: "Marcher, ce jour-là, c'est transformer l'hommage officiel en un geste collectif. Ce n'est plus seulement assister à une cérémonie — c'est y prendre part.",
+        concept_quote: "Ils se sont sacrifiés pour notre paix. Aujourd'hui, offrons-leur notre reconnaissance.",
+        concept_p4: "À chaque pas, nous gardons leur mémoire vivante.",
+        concept_p5: "Nous rappelons à tous que leur engagement ne sera jamais oublié.",
+        concept_p6: "Car une Nation qui se souvient est une Nation qui grandit.",
+
+        banner_1: "UNE MARCHE POUR LA MÉMOIRE",
+        banner_2: "UNE MARCHE POUR LA RECONNAISSANCE",
+        banner_3: "UNE MARCHE POUR L'HONNEUR",
+
+        practical_heading: "INFOS PRATIQUES",
+        practical_card1_title: "DATE : 14 AOÛT — YAOUNDÉ",
+        practical_card1_text: "La Journée du Souvenir se tient à Yaoundé, jour de rassemblement national autour de nos héros.",
+        practical_card2_title: "LIEU : YAOUNDÉ",
+        practical_card2_text: "La marche relie plusieurs lieux symboliques de la capitale.",
+        practical_card3_title: "POINT DE RASSEMBLEMENT :<br /><span class=\"title-light\">MONUMENT AUX MORTS.</span>",
+        practical_card4_title: "TEMPS: 08:30",
+        practical_card4_text: "Le rassemblement débutera tôt le matin, à 8h30, afin d'assurer un démarrage unifié et ponctuel.",
+        practical_card5_title: "KIT PARTICIPANT : UN T-SHIRT BLANC + UNE BOUTEILLE D'EAU",
+        practical_card5_text: "Chaque participant reçoit son kit sur place le jour de la marche.",
+
+        itinerary_title: "ITINÉRAIRE",
+        itinerary_intro: "Un parcours à travers l'histoire de la ville, du Monument aux Morts à la Place de l'Indépendance.",
+        itin_1_title: "Départ : Monument aux Morts (prise d'armes et hommage)",
+        itin_2_title: "Ministère de la Défense",
+        itin_2_sub: "Symbole de l'unité nationale",
+        itin_3_title: "Poste Centrale",
+        itin_3_sub: "Hommage aux forces armées",
+        itin_4_title: "Boulevard du 20 Mai",
+        itin_4_sub: "Expression du patriotisme",
+        itin_5_title: "Carrefour « J'aime mon pays »",
+        itin_5_sub: "Expression du patriotisme",
+        itin_6_title: "Montée Abbia",
+        itin_6_sub: "Dernière portion du parcours",
+        itin_7_title: "Arrivée : Place de l'Indépendance (Esplanade de l'Hôtel de Ville)",
+        itin_7_sub: "Point d'arrivée de la promenade",
+
+        reg_heading: "REJOIGNEZ LA<br>MARCHE POUR<br>L'HONNEUR",
+        reg_desc: "Rejoignez des milliers de Camerounais pour marcher, ensemble, en hommage à nos anciens combattants, anciens militaires et victimes de guerre.",
+        reg_label_name: "Nom",
+        reg_ph_name: "Entrez votre nom complet",
+        reg_label_phone: "Numéro de téléphone",
+        reg_label_email: "Adresse e-mail",
+        reg_ph_email: "Entrez votre e-mail",
+        reg_label_city: "Ville / Localité de résidence",
+        reg_ph_city: "eg. Buea",
+        reg_quote: "Ils se sont sacrifiés pour notre paix. Aujourd'hui, offrons-leur notre reconnaissance.",
+        reg_btn: "INSCRIVEZ-VOUS À LA MARCHE"
+      },
+      en: {
+        meta_desc: "They sacrificed themselves for our peace. Today, let's offer them our gratitude. Walk For Honor Cameroon.",
+        hero_heading: "They sacrificed themselves for our peace.<br />Today, let's offer them our gratitude.",
+        hero_subtitle: "To those who never returned. To those who came back wounded. To all who served Cameroon.",
+        btn_march: "I'm marching for honor",
+
+        why_heading: "WHY AUGUST 14TH?",
+        why_sub1: "A DATE THAT CARRIES THE NATION'S MEMORY",
+        why_p1: "August 14th is not a date chosen at random. It is the day, in 2008, when the Bakassi peninsula was returned to Cameroon — the culmination of a long struggle for the country's sovereignty and territorial integrity.",
+        why_p2: "This victory is owed to those who served, who fought, and who, in some cases, never returned.",
+        why_p3: "That is why this date became, in 2008, the Day of Remembrance: a day when Cameroon pauses to remember those who fell for the Nation, honor those who served, and pass on to future generations the values of courage, sacrifice and national unity.",
+        why_sub2: "WHAT THIS DAY REPRESENTS",
+        why_p4: "To remember is not to look backward. It is to understand what was sacrificed so that we, today, have peace and sovereignty over our territory.",
+        why_p5: "It is also a forward-looking act: passing this memory on to younger generations, so they know where their country comes from — and what it took to defend it.",
+
+        concept_heading: "THE WALK FOR HONOR CONCEPT",
+        concept_p1: "The day opens at the Monument aux Morts, with a military tribute honoring those who fell for the Nation.",
+        concept_p2: "From there, a patriotic march brings the Nation together: veterans, service members, young people, families and citizens, marching side by side to the Place de l'Indépendance.",
+        concept_p3: "To march that day is to turn an official tribute into a collective act. It is no longer just attending a ceremony — it is taking part in it.",
+        concept_quote: "They sacrificed themselves for our peace. Today, let's offer them our gratitude.",
+        concept_p4: "With every step, we keep their memory alive.",
+        concept_p5: "We remind everyone that their commitment will never be forgotten.",
+        concept_p6: "Because a Nation that remembers is a Nation that grows.",
+
+        banner_1: "A MARCH FOR MEMORY",
+        banner_2: "A MARCH FOR GRATITUDE",
+        banner_3: "A MARCH FOR HONOR",
+
+        practical_heading: "PRACTICAL INFORMATION",
+        practical_card1_title: "DATE: AUGUST 14 IN YAOUNDÉ",
+        practical_card1_text: "The Day of Remembrance takes place in Yaoundé, a day of national gathering around our heroes.",
+        practical_card2_title: "LOCATION: YAOUNDÉ",
+        practical_card2_text: "The march connects several symbolic sites across the capital.",
+        practical_card3_title: "ASSEMBLY POINT:<br /><span class=\"title-light\">MONUMENT AUX MORTS.</span>",
+        practical_card4_title: "TIME: 08:30",
+        practical_card4_text: "The gathering begins early in the morning at 08:30 to ensure a unified and timely start.",
+        practical_card5_title: "PARTICIPANT KIT: A WHITE T-SHIRT + A BOTTLE OF WATER",
+        practical_card5_text: "Each participant receives their kit on site on the day of the march.",
+
+        itinerary_title: "ITINERARY",
+        itinerary_intro: "A route through the history of the city, from the Monument aux Morts to the Place de l'Indépendance.",
+        itin_1_title: "Departure: Monument aux Morts (military tribute)",
+        itin_2_title: "Ministry of Defense",
+        itin_2_sub: "Symbol of national unity",
+        itin_3_title: "Poste Centrale",
+        itin_3_sub: "Tribute to armed forces",
+        itin_4_title: "Boulevard du 20 Mai",
+        itin_4_sub: "Historic city landmark",
+        itin_5_title: "\"I Love My Country\" Junction",
+        itin_5_sub: "Expression of patriotism",
+        itin_6_title: "Abbia Ascent",
+        itin_6_sub: "Final stretch of the route",
+        itin_7_title: "Arrival: Place de l'Indépendance (Esplanade of Yaoundé City Hall)",
+        itin_7_sub: "End point of the walk",
+
+        reg_heading: "REGISTRATION<br>FORM JOIN THE<br>WALK FOR<br>HONOR",
+        reg_desc: "Join thousands of Cameroonians as we march together in tribute to our veterans, former military personnel, and victims of war.",
+        reg_label_name: "Name",
+        reg_ph_name: "Enter your full name",
+        reg_label_phone: "Phone Number",
+        reg_label_email: "Email Address",
+        reg_ph_email: "Enter your email",
+        reg_label_city: "City / Town of Residence",
+        reg_ph_city: "eg. Buea",
+        reg_quote: "They sacrificed themselves for our peace. Today, let's offer them our gratitude.",
+        reg_btn: "REGISTER FOR THE WALK"
+      }
+    };
+    const tickerWords = {
+      fr: ["RECONNAISSANCE", "PATRIE", "COURAGE", "SACRIFICE", "PAIX", "UNITÉ NATIONALE"],
+      en: ["MEMORY", "GRATITUDE", "NATION", "COURAGE", "SACRIFICE", "PEACE", "TRANSMISSION"]
+    };
+
+    const langFr = document.getElementById('langFr');
+    const langEn = document.getElementById('langEn');
+    const tickerTrack = document.getElementById('tickerTrack');
+
+    function renderTicker(lang) {
+      const words = tickerWords[lang] || tickerWords.fr;
+      const starSvg = `<svg class="ticker-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#F1C565" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+
+      let groupContent = '';
+      words.forEach((word) => {
+        groupContent += `<span class="ticker-word">${word}</span>${starSvg}`;
+      });
+
+      if (tickerTrack) {
+        tickerTrack.innerHTML = `
+          <div class="ticker-group">${groupContent}</div>
+          <div class="ticker-group" aria-hidden="true">${groupContent}</div>
+        `;
+      }
+    }
+
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+
+      if (lang === 'fr') {
+        langFr.classList.add('active');
+        langEn.classList.remove('active');
+      } else {
+        langEn.classList.add('active');
+        langFr.classList.remove('active');
+      }
+
+      const dict = translations[lang] || translations.fr;
+
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key] !== undefined) {
+          el.setAttribute('placeholder', dict[key]);
+        }
+      });
+
+      // ADD THIS FOR BANNER TEXT
+      document.querySelectorAll('.banner-track [data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) {
+          el.textContent = dict[key];
+        }
+      });
+
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc && dict.meta_desc) {
+        metaDesc.setAttribute('content', dict.meta_desc);
+      }
+
+      renderTicker(lang);
+      localStorage.setItem('walk_for_honor_lang', lang);
+    }
+
+    langFr.addEventListener('click', () => setLanguage('fr'));
+    langEn.addEventListener('click', () => setLanguage('en'));
+
+    const speakerBtn = document.getElementById('speakerBtn');
+    let isMuted = false;
+    if (speakerBtn) {
+      speakerBtn.addEventListener('click', () => {
+        isMuted = !isMuted;
+        speakerBtn.style.opacity = isMuted ? '0.4' : '1';
+      });
+    }
+
+    // Initialize on page load
+    const savedLang = localStorage.getItem('walk_for_honor_lang') || 'fr';
+    setLanguage(savedLang);
+
+    // Smooth scroll to registration section for all march buttons
+    function scrollToRegistration() {
+      const target = document.getElementById('registration');
+      if (target) {
+        if (typeof lenis !== 'undefined' && lenis.scrollTo) {
+          lenis.scrollTo('#registration');
+        } else {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+
+    ['heroMarchBtn', 'whyAugustMarchBtn', 'conceptMarchBtn', 'itineraryMarchBtn'].forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          scrollToRegistration();
+        });
+      }
+    });
+  </script>
+
+
+  <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
