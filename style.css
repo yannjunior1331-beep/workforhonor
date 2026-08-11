@@ -1630,13 +1630,15 @@ body::-webkit-scrollbar,
   position: relative;
   width: 100%;
   max-width: 100%;
-  height: 906px;
+  min-height: 906px;
   margin: 0;
   background: #1E2321;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Changed back to center */
   box-sizing: border-box;
+  padding: 40px 0 30px 0; /* Adjusted padding */
 }
 
 .registration-container {
@@ -1646,6 +1648,8 @@ body::-webkit-scrollbar,
   align-items: flex-start;
   gap: 80px;
   box-sizing: border-box;
+  flex-shrink: 0;
+  margin: 0 auto; /* Center the container */
 }
 
 /* ===== Left Column: Text + Logos ===== */
@@ -1657,6 +1661,7 @@ body::-webkit-scrollbar,
   justify-content: space-between;
   padding: 0;
   align-self: stretch;
+  gap: 20px; /* Added gap for better spacing */
 }
 
 .registration-heading {
@@ -2401,10 +2406,10 @@ body::-webkit-scrollbar,
     align-self: left;
   }
 
-  /* --- Registration Section --- */
+     /* --- Registration Section --- */
   .registration-section {
     height: auto;
-    padding: 48px 16px 100px;
+    padding: 40px 10px 20px;
   }
 
   .registration-container {
@@ -2412,15 +2417,18 @@ body::-webkit-scrollbar,
     flex-direction: column;
     gap: 32px;
     border: none;
+    padding: 0 10px 50px 10px ; /* ADD THIS - small inner padding */
+    box-sizing: border-box;
   }
 
   .registration-left {
     width: 100%;
     border-right: none;
     border-bottom: none;
-    padding: 0;
+    padding: 0; /* Remove padding to let section handle it */
     text-align: center;
     align-items: center;
+    gap: 16px;
   }
 
   .registration-heading {
@@ -2431,13 +2439,13 @@ body::-webkit-scrollbar,
   .registration-description {
     font-size: 14px;
     text-align: center;
-    margin-top: 12px;
+    margin-top: 8px;
   }
 
   .registration-logos {
     justify-content: center;
     gap: 28px;
-    margin-top: 20px;
+    margin-top: 16px;
   }
 
   .registration-logo-1 {
@@ -2452,15 +2460,18 @@ body::-webkit-scrollbar,
 
   .registration-right {
     width: 100%;
+    padding: 0;
   }
 
   .registration-form {
     height: auto;
     gap: 16px;
+    width: 100%;
   }
 
   .form-group {
     min-height: unset;
+    width: 100%;
   }
 
   .form-field-header {
@@ -2481,6 +2492,8 @@ body::-webkit-scrollbar,
     height: 52px;
     font-size: 14px;
     padding: 0 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .form-input::placeholder {
@@ -2489,6 +2502,7 @@ body::-webkit-scrollbar,
 
   .form-phone-wrapper {
     height: 52px;
+    width: 100%;
   }
 
   .form-phone-prefix {
@@ -2499,11 +2513,17 @@ body::-webkit-scrollbar,
   .form-row {
     flex-direction: column;
     gap: 16px;
+    width: 100%;
   }
 
   .form-row .form-group {
     border-right: none;
     border-bottom: none;
+    width: 100%;
+  }
+
+  .form-group--full {
+    width: 100%;
   }
 
   .registration-bottom-row {
@@ -2511,6 +2531,7 @@ body::-webkit-scrollbar,
     gap: 12px;
     align-items: stretch;
     margin-top: 16px;
+    width: 100%;
   }
 
   .registration-quote {
@@ -2525,8 +2546,26 @@ body::-webkit-scrollbar,
     padding: 0 20px;
     justify-content: center;
   }
-}
 
+    /* Footer on mobile */
+  .footer-wrapper {
+    padding: 12px 0 100px; /* Increased bottom padding to clear the sticky bar */
+    /* margin: 10px auto 0; */
+    width: 100%;
+  }
+
+  .footer-powered {
+    font-size: 12px;
+    color: rgba(211, 15, 15, 0.5);
+    background: rgba(30, 35, 33, 0.9); /* Add background to make it visible */
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+}
 /* ---------- Very small screens: max-width 400px ---------- */
 @media (max-width: 400px) {
   .hero-heading {
@@ -2846,5 +2885,59 @@ body::-webkit-scrollbar,
     font-size: 14px;
     line-height: 140%;
     text-align: left;
+  }
+}
+/* ==========================================================================
+   Footer / Powered by Eventify - Inside Registration Section
+   ========================================================================== */
+.footer-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin: 100px auto 0; /* Reduced margin */
+  padding: 16px 54px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.footer-powered {
+  font-family: 'Aspekta', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.footer-highlight {
+  font-weight: 700;
+  color: #F1C565;
+  letter-spacing: 0.08em;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .registration-section {
+    padding: 30px 0 20px 0;
+    min-height: auto;
+  }
+
+  .footer-wrapper {
+    /* Keep the footer above the fixed mobile bottom bar. */
+    padding: 12px 20px calc(76px + env(safe-area-inset-bottom));
+    margin: -5px auto 0;
+  }
+
+  .footer-powered {
+    font-size: 12px;
+    background: none;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
