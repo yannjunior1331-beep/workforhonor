@@ -2133,11 +2133,13 @@ body::-webkit-scrollbar,
     text-align: center;
   }
 
-  .why-august-paragraph {
-    font-size: 14px;
-    line-height: 150%;
-    text-align: left;
-  }
+ .why-august-paragraph {
+  font-size: 10px !important;
+  line-height: 190% !important;
+  text-align: center !important;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
 
   .why-august-btn {
     width: 100%;
@@ -2745,4 +2747,103 @@ body::-webkit-scrollbar,
 
 .concept-img-wrapper:hover::after {
   opacity: 1;
+}
+/* ==========================================================================
+   MOBILE OVERRIDES FOR PRACTICAL SECTION - Make ALL cards light
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* --- Practical Information Section --- */
+  .practical-section {
+    min-height: auto;
+    padding: 48px 16px;
+  }
+
+  .practical-container {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .practical-heading {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  .practical-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .practical-card {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    padding: 28px 20px;
+  }
+
+  /* ==== MAKE ALL CARDS LIGHT ON MOBILE ==== */
+  /* Override both light and dark cards to be light */
+  .practical-card--light,
+  .practical-card--dark {
+    background: rgba(229, 229, 229, 0.36) !important;  /* Light background for ALL cards */
+    color: #1E2321 !important;                          /* Dark text for readability */
+  }
+
+  .practical-card--light .practical-card-title,
+  .practical-card--dark .practical-card-title {
+    color: #1E2321 !important;                          /* Dark title text for ALL cards */
+  }
+
+  .practical-card--light .practical-card-text,
+  .practical-card--dark .practical-card-text {
+    color: #1E2321 !important;                          /* Dark paragraph text for ALL cards */
+    opacity: 0.8 !important;                            /* Consistent opacity for ALL cards */
+  }
+  /* ================================================== */
+
+  .practical-card--full {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .practical-full-img-wrapper {
+    width: 100%;
+    height: 220px;
+    padding: 8px;
+  }
+
+  .practical-full-content {
+    width: 100%;
+    height: auto;
+    padding: 28px 20px;
+    background: rgba(229, 229, 229, 0.36) !important;  /* Full card also light */
+    color: #1E2321 !important;
+  }
+
+  .practical-full-content .practical-card-title {
+    color: #1E2321 !important;
+  }
+
+  .practical-full-content .practical-card-text {
+    color: #1E2321 !important;
+    opacity: 0.8 !important;
+  }
+
+  .practical-card-title {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .practical-card-title .title-light {
+    font-size: 20px;
+    color: #1E2321 !important;  /* Ensure the light weight text is also dark */
+  }
+
+  .practical-card-text {
+    font-size: 14px;
+    line-height: 140%;
+    text-align: left;
+  }
 }
